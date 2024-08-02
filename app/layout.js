@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import "../public/ClashDisplay_Complete/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css";
+import Headers from "./Components/Headers";
+import Footer from "./Components/Footer";
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="font-clash">
+        <Headers />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
