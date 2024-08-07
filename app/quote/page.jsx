@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import Headers from "../Components/Headers";
+import CountryDropdown from "../Components/CountryDropdown";
 
 const services = [
   "Enter Origin & Destination",
@@ -10,10 +12,15 @@ const services = [
 
 export default function QuotePage() {
   const bkColor = "black";
+  const [selectedCountry, setSelectedCountry] = React.useState(null);
+
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption);
+  };
   return (
     <>
       <Headers />
-      <main className="px-[3%]">
+      <main className="px-[3%] pb-20">
         <section>
           <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">
             <h1 className="text-5xl lg:text-[69px] font-clashmd lg:basis-[60%] leading-[59.04px] lg:leading-[80px]">
@@ -54,6 +61,90 @@ export default function QuotePage() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+        <section className="py-20">
+          <div className="mx-auto py-8 lg:px-6 max-w-[966px] lg:border border-[#f4f4f4] lg:rounded-[20px]">
+            <p className="text-center font-clashmd text-2xl lg:text-xl">
+              Shipping information
+            </p>
+            <div className="w-full grid gap-2">
+              <label className="text-base font-clashmd lg:pl-3">From</label>
+              <div className="grid lg:grid-cols-2 gap-5">
+                <div>
+                  <CountryDropdown
+                    selectedCountry={selectedCountry}
+                    handleCountryChange={handleCountryChange}
+                  />
+                </div>
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+                <div></div>
+              </div>
+            </div>
+            <div className="w-full grid gap-2">
+              <label className="text-base font-clashmd lg:pl-3">To</label>
+              <div className="grid lg:grid-cols-3 gap-5">
+                <div>
+                  <CountryDropdown
+                    selectedCountry={selectedCountry}
+                    handleCountryChange={handleCountryChange}
+                  />
+                </div>
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+              </div>
+            </div>
+            <button className="bg-primary text-white mx-auto mt-16 min-w-full lg:min-w-[602px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center">
+              Describe your shipment
+            </button>
+          </div>
+        </section>
+        <section className="py-20">
+          <div className="mx-auto py-8 max-w-[600px]">
+            <p className="text-center font-clashmd text-2xl lg:text-xl">
+              Shipment Details
+            </p>
+            <div className="w-full mt-7 grid gap-2 lg:px-4">
+              <div className="grid lg:grid-cols-2 gap-2">
+                <div className="grid gap-2">
+                  <label className="text-base font-clashmd lg:pl-3">
+                    Item Weight
+                  </label>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+                <div className="grid gap-2">
+                  <label className="text-base font-clashmd lg:pl-3">
+                    Item Quantity
+                  </label>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+              </div>
+            </div>
+            <div className="w-full grid gap-2 lg:px-4 mt-7">
+              <label className="text-base font-clashmd lg:pl-3">
+                Item Dimensions
+              </label>
+              <div className="grid lg:grid-cols-3 gap-2">
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+                <div>
+                  <input type="text" name="city" className="inputBox" />
+                </div>
+              </div>
+            </div>
+            <button className="bg-primary text-white min-w-full mx-auto mt-16 lg:min-w-[600px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center">
+              Describe your shipment
+            </button>
           </div>
         </section>
       </main>

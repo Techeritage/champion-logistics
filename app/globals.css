@@ -13,3 +13,7 @@
 .bodyText {
   @apply leading-[19.68px] text-base lg:text-xl lg:leading-[24.6px];
 }
+
+.inputBox {
+  @apply border border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full
+}
