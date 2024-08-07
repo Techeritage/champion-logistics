@@ -10,7 +10,7 @@ export default function QuoteBtn({
 }) {
   return (
     <div
-      className={`bg-primary relative flex items-center text-white text-base px-8 lg:px-5 h-[62px] lg:h-[48px] rounded-full ${className}`}
+      className={`bg-primary ml-[-50px] relative flex items-center text-white text-base px-8 lg:px-5 h-[62px] lg:h-[48px] rounded-full ${className}`}
     >
       <Link href={href}>{title}</Link>
       <span
