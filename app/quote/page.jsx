@@ -78,8 +78,14 @@ export default function QuotePage() {
                   />
                 </div>
                 <div>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="City *"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
+
                 <div></div>
               </div>
             </div>
@@ -92,11 +98,21 @@ export default function QuotePage() {
                     handleCountryChange={handleCountryChange}
                   />
                 </div>
-                <div>
-                  <input type="text" name="city" className="inputBox" />
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="city"
+                    placeholder="City *"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
-                <div>
-                  <input type="text" name="city" className="inputBox" />
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="postal"
+                    placeholder="Postal Code *"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
               </div>
             </div>
@@ -106,7 +122,7 @@ export default function QuotePage() {
           </div>
         </section>
         <section className="py-20">
-          <div className="mx-auto py-8 max-w-[600px]">
+          <div className="mx-auto py-8 max-w-[700px]">
             <p className="text-center font-clashmd text-2xl lg:text-xl">
               Shipment Details
             </p>
@@ -116,13 +132,22 @@ export default function QuotePage() {
                   <label className="text-base font-clashmd lg:pl-3">
                     Item Weight
                   </label>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    placeholder="Item weight (Kg) *"
+                    name="weight"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
                 <div className="grid gap-2">
                   <label className="text-base font-clashmd lg:pl-3">
                     Item Quantity
                   </label>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    name="city"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
               </div>
             </div>
@@ -132,13 +157,28 @@ export default function QuotePage() {
               </label>
               <div className="grid lg:grid-cols-3 gap-2">
                 <div>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    placeholder="Height (cm) *"
+                    name="height"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
                 <div>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    name="length"
+                    placeholder="Length (cm) *"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
                 <div>
-                  <input type="text" name="city" className="inputBox" />
+                  <input
+                    type="text"
+                    placeholder="Width (cm) *"
+                    name="width"
+                    className="inputBox placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                  />
                 </div>
               </div>
             </div>

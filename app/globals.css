@@ -15,5 +15,5 @@
 }
 
 .inputBox {
-  @apply border border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full
+  @apply border pl-8 border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full
 }
