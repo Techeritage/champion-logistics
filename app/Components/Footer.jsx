@@ -47,7 +47,7 @@ export default function Footer() {
           Efficient logistics
         </p>
       </div>
-      <div className="w-full bg-[#345976] px-[3%] gap-10 py-14 flex lg:flex-row flex-col lg:items-center">
+      <div className="w-full bg-primary px-[3%] gap-10 py-14 flex lg:flex-row flex-col lg:items-center">
         <div className="grid gap-8 basis-1/2">
           <div className="h-[37px] lg:h-[39px] w-fit text-sm lg:text-base text-white border border-white rounded-full px-3 flex items-center justify-center">
             Contact Us
@@ -112,7 +112,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="pt-10 flex items-center justify-center lg:justify-end bg-[#345976] px-[3%] pb-10">
+      <div className="pt-10 flex items-center justify-center lg:justify-end bg-primary px-[3%] pb-10">
         <div className="flex gap-3 lg:gap-5 flex-col lg:flex-row items-center">
           <p className="text-white text-xs lg:text-base text-center">
             &copy; {startYear} - {currentYear} All Rights Reserved. Powered by
