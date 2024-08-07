@@ -76,7 +76,7 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
             ))}
           </div>
           <div className="w-fit mx-auto">
-            <QuoteBtn href="/quote" title="Request a Quote" />
+            <QuoteBtn className="ml-[-50px]" href="/quote" title="Request a Quote" />
           </div>
         </div>
       )}

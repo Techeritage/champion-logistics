@@ -235,7 +235,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="w-fit mx-auto mt-14 lg:mt-20">
-            <QuoteBtn title="View Our Services" href="/services" />
+            <QuoteBtn className="ml-[-50px]" title="View Our Services" href="/services" />
           </div>
         </section>
         <section className="py-20">
@@ -263,7 +263,7 @@ export default function HomePage() {
               />
             </div>
             <div className="mx-auto w-fit mt-10 lg:hidden">
-              <QuoteBtn title="Request a Quote" href="/quote" />
+              <QuoteBtn className="ml-[-50px]" title="Request a Quote" href="/quote" />
             </div>
           </div>
         </section>
