@@ -41,7 +41,7 @@ export default function QuotePage() {
                 key={index}
                 className="max-w-[90%] flex flex-col items-center gap-3"
               >
-                <div className="lg:max-w-[217px] flex flex-col items-center justify-center">
+                <div className="lg:max-w-[217px] flex flex-col gap-3 items-center justify-center">
                   <div
                     className={`w-[30px] h-[30px] text-sm ${
                       bkColor === "black"
