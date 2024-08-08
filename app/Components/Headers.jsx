@@ -84,7 +84,7 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
         {navLinks.map((link, i) => (
           <Link
             className={`text-base font-clashmd ${
-              pathName === link.href ? "text-primary" : textColor
+              pathName.startsWith(link.href) ? "text-primary" : textColor
             }`}
             key={i}
             href={link.href}
