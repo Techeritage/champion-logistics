@@ -12,12 +12,12 @@ export default function HomePage() {
   });
 
   const { ref: boxRef, inView: boxInView } = useInView({
-    threshold: 0.3, // Adjust threshold as needed
+    threshold: 0.5, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef2, inView: boxInView2 } = useInView({
-    threshold: 0.3, // Adjust threshold as needed
+    threshold: 0.5, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
   });
 
