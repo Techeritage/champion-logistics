@@ -54,15 +54,37 @@ export default function HomePage() {
           </div>
         </section>
         <section className="py-20">
-          <div className="bg-primary px-4 rounded-full w-fit py-2 text-sm lg:text-base text-white">
+          <div
+            ref={ref}
+            className={`bg-primary animate__animated ${
+              inView
+                ? "animate__backInUp visible-after-animation"
+                : "hidden-before-animation"
+            } px-4 rounded-full w-fit py-2 text-sm lg:text-base text-white`}
+          >
             Customer centric approach
           </div>
-          <div className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between py-5">
-            <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]">
+          <div
+            ref={ref}
+            className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between py-5"
+          >
+            <h2
+              className={`text-[24px] animate__animated ${
+                inView
+                  ? "animate__backInDown visible-after-animation"
+                  : "hidden-before-animation"
+              } leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]`}
+            >
               Experience Excellence with{" "}
               <span className="lg:text-primary">Champions Logistics</span>
             </h2>
-            <p className="text-base leading-[19.68px] text-black max-w-[557px]">
+            <p
+              className={`text-base animate__animated ${
+                inView
+                  ? "animate__bounceInRight visible-after-animation"
+                  : "hidden-before-animation"
+              } leading-[19.68px] text-black max-w-[557px]`}
+            >
               We prioritize precision, reliability, and a customer-centric
               approach, making your satisfaction our top priority. experience
               the differences of logistics partner committed to excellence-
