@@ -53,9 +53,9 @@ export default function AboutPage() {
             Warehousing Services, etc.
             <br />
             <br />
-            Our expertise also includes providing a comprehensive and tailor-made
-            solution to meet the relocation needs of corporate and residential
-            clients.
+            Our expertise also includes providing a comprehensive and
+            tailor-made solution to meet the relocation needs of corporate and
+            residential clients.
           </p>
         </section>
         <section className="pb-20 px-[3%] lg:py-20 flex flex-col gap-12 lg:flex-row justify-between">
@@ -74,21 +74,22 @@ export default function AboutPage() {
           </div>
           <div className="lg:basis-[55%]">
             <p className="text-base bodyText lg:leading-[24.6px] lg:text-xl max-w-full">
-              We have been known for delivering reliable cargo handling services.
-              Our company has been credited for providing Air Freight services,
-              Freight Logistics services, hassle-free services for clearance of
-              both export and import consignments at customs channels through
-              Inland Container Depot located at Tin Can Island, Apapa, Onne Port,
-              Port Harcourt, Calabar Port, Phase.II, Kirikiri, Muritala Mohammed
-              International Airport Cargo Handling, Kano International Airport &
-              Abuja International Airport.
+              We have been known for delivering reliable cargo handling
+              services. Our company has been credited for providing Air Freight
+              services, Freight Logistics services, hassle-free services for
+              clearance of both export and import consignments at customs
+              channels through Inland Container Depot located at Tin Can Island,
+              Apapa, Onne Port, Port Harcourt, Calabar Port, Phase.II, Kirikiri,
+              Muritala Mohammed International Airport Cargo Handling, Kano
+              International Airport & Abuja International Airport.
               <br />
               <br />
               Leveraging on the extensive logistics and communications network,
               our team can create cost-effective solutions tailored to meet your
-              needs. We have made a strong repute for impeccable freight logistics
-              services in Nigeria and the world, which is characterized by
-              Timeliness, Flexibility, Swiftness, Safety and Reliability.
+              needs. We have made a strong repute for impeccable freight
+              logistics services in Nigeria and the world, which is
+              characterized by Timeliness, Flexibility, Swiftness, Safety and
+              Reliability.
             </p>
           </div>
         </section>
@@ -120,8 +121,8 @@ export default function AboutPage() {
             <h2 className="heading text-primaryLight">Our Strength.</h2>
             <p className="bodyText text-white lg:max-w-[668px]">
               Our strength lies in our ability to offer this wide and extensive
-              logistics package that is cost effective and convenient for all our
-              clients, and its tailored to meet our client&#39;s needs.
+              logistics package that is cost effective and convenient for all
+              our clients, and its tailored to meet our client&#39;s needs.
             </p>
           </div>
         </section>
@@ -138,6 +139,5 @@ export default function AboutPage() {
         </section>
       </main>
     </>
-
   );
 }

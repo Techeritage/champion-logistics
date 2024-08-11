@@ -21,6 +21,7 @@ const CountryDropdown = ({ selectedCountry, handleCountryChange }) => {
       onChange={handleCountryChange}
       options={options}
       isSearchable
+      required
       placeholder="Select a country"
       styles={{
         control: (base) => ({
