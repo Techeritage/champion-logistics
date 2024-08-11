@@ -8,17 +8,17 @@ import { useInView } from "react-intersection-observer";
 export default function HomePage() {
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.3, // Adjust threshold as needed
-    //triggerOnce: true, // Only trigger the animation once
+    triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef, inView: boxInView } = useInView({
     threshold: 0.5, // Adjust threshold as needed
-    //triggerOnce: true, // Only trigger the animation once
+    triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef2, inView: boxInView2 } = useInView({
     threshold: 0.5, // Adjust threshold as needed
-    //triggerOnce: true, // Only trigger the animation once
+    triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: ref1, inView: inView1 } = useInView({
@@ -134,7 +134,7 @@ export default function HomePage() {
                 inView1
                   ? "animate__fadeInLeft visible-after-animation"
                   : "hidden-before-animation"
-              }relative`}
+              } relative`}
             >
               <Image
                 loading="lazy"
