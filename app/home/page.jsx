@@ -12,43 +12,43 @@ export default function HomePage() {
   });
 
   const { ref: boxRef, inView: boxInView } = useInView({
-    threshold: 0.5, // Adjust threshold as needed
+    threshold: 0.4, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef2, inView: boxInView2 } = useInView({
-    threshold: 0.5, // Adjust threshold as needed
+    threshold: 0.4, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: ref1, inView: inView1 } = useInView({
-    threshold: 0.3,
-    //triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   const { ref: ref11, inView: inView11 } = useInView({
-    threshold: 0.3,
-    //triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   const { ref: ref2, inView: inView2 } = useInView({
-    threshold: 0.3,
-    //triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   const { ref: ref3, inView: inView3 } = useInView({
-    threshold: 0.3,
-    //triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   const { ref: ref4, inView: inView4 } = useInView({
-    threshold: 0.3,
-    // triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   const { ref: ref5, inView: inView5 } = useInView({
-    threshold: 0.3,
-    //triggerOnce: true,
+    threshold: 0.2,
+    triggerOnce: true,
   });
 
   return (
