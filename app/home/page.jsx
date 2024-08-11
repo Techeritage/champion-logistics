@@ -1,23 +1,45 @@
+"use client";
 import QuoteBtn from "../Components/QuoteBtn";
 import Faqs from "../Components/Faqs";
 import Image from "next/image";
 import Headers from "../Components/Headers";
+import { useInView } from "react-intersection-observer";
 
 export default function HomePage() {
+  const { ref, inView } = useInView({
+    threshold: 0.3, // Adjust threshold as needed
+    triggerOnce: true, // Only trigger the animation once
+  });
+
   return (
     <>
       <Headers />
       <main className="px-[3%]">
         <section>
           <div>
-            <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">
-              <h1 className="text-5xl lg:text-[69px] font-clashmd max-w-[921px] leading-[59.04px] lg:leading-[80px]">
+            <div
+              ref={ref}
+              className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9"
+            >
+              <h1
+                className={`text-5xl animate__animated ${
+                  inView
+                    ? "animate__backInDown visible-after-animation"
+                    : "hidden-before-animation"
+                } lg:text-[69px] font-clashmd max-w-[921px] leading-[59.04px] lg:leading-[80px]`}
+              >
                 Swift, Reliable, <span className="text-primary">Efficient</span>{" "}
                 Logistics solutions
               </h1>
-              <p className="lg:max-w-[365px] leading-[19.68px]">
-                Experience flawless shipping solutions tailored sto your needs, we
-                take pride in delivering excellence with punctuality at the
+              <p
+                className={`lg:max-w-[365px] leading-[19.68px] animate__animated ${
+                  inView
+                    ? "animate__bounceInRight visible-after-animation"
+                    : "hidden-before-animation"
+                }`}
+              >
+                Experience flawless shipping solutions tailored sto your needs,
+                we take pride in delivering excellence with punctuality at the
                 forefront.
               </p>
             </div>
@@ -42,9 +64,9 @@ export default function HomePage() {
             </h2>
             <p className="text-base leading-[19.68px] text-black max-w-[557px]">
               We prioritize precision, reliability, and a customer-centric
-              approach, making your satisfaction our top priority. experience the
-              differences of logistics partner committed to excellence- experience
-              champions logistics
+              approach, making your satisfaction our top priority. experience
+              the differences of logistics partner committed to excellence-
+              experience champions logistics
             </p>
           </div>
           <div className="flex mt-10 lg:mt-0 lg:flex-row flex-col min-w-full gap-5 min-h-[402px]">
@@ -90,7 +112,8 @@ export default function HomePage() {
                 />
                 <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-5 leading-[19.68px] left-4">
                   Securing your goods from end-to-end is our <br /> topmost
-                  priority. You can rest assured of your <br /> good in our hands.
+                  priority. You can rest assured of your <br /> good in our
+                  hands.
                 </p>
               </div>
               <div className="relative">
@@ -111,8 +134,8 @@ export default function HomePage() {
                   className="absolute top-4 left-4"
                 />
                 <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-7 leading-[19.68px] left-4">
-                  Your goods are delivered as and when <br /> due. Prompt delivery
-                  is our watch word.
+                  Your goods are delivered as and when <br /> due. Prompt
+                  delivery is our watch word.
                 </p>
               </div>
             </div>
@@ -173,9 +196,9 @@ export default function HomePage() {
             </h2>
             <p className="text-base text-black max-w-[557px]">
               We offer an extensive range of services designed to meet all your
-              logistics needs. From transportation and warehousing to supply chain
-              management, our expert team ensures precision and reliability in
-              every step.
+              logistics needs. From transportation and warehousing to supply
+              chain management, our expert team ensures precision and
+              reliability in every step.
             </p>
           </div>
           <div className="flex lg:flex-row flex-col lg:max-h-[450px] gap-5 pt-10">
@@ -235,7 +258,11 @@ export default function HomePage() {
             </div>
           </div>
           <div className="w-fit mx-auto mt-14 lg:mt-20">
-            <QuoteBtn className="ml-[-50px]" title="View Our Services" href="/services" />
+            <QuoteBtn
+              className="ml-[-50px]"
+              title="View Our Services"
+              href="/services"
+            />
           </div>
         </section>
         <section className="py-20">
@@ -263,7 +290,11 @@ export default function HomePage() {
               />
             </div>
             <div className="mx-auto w-fit mt-10 lg:hidden">
-              <QuoteBtn className="ml-[-50px]" title="Request a Quote" href="/quote" />
+              <QuoteBtn
+                className="ml-[-50px]"
+                title="Request a Quote"
+                href="/quote"
+              />
             </div>
           </div>
         </section>
@@ -280,6 +311,5 @@ export default function HomePage() {
         </section>
       </main>
     </>
-
   );
 }

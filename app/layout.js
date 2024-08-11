@@ -1,4 +1,5 @@
 import "./globals.css";
+import 'animate.css';
 import "../public/ClashDisplay_Complete/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css";
 import Footer from "./Components/Footer";
 

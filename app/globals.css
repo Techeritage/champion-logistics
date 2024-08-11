@@ -17,3 +17,12 @@
 .inputBox {
   @apply border pl-8 border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full
 }
+
+.hidden-before-animation {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible-after-animation {
+  opacity: 1;
+}
