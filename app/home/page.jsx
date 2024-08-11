@@ -16,6 +16,36 @@ export default function HomePage() {
     triggerOnce: true, // Only trigger the animation once
   });
 
+  const { ref: boxRef2, inView: boxInView2 } = useInView({
+    threshold: 0.3, // Adjust threshold as needed
+    triggerOnce: true, // Only trigger the animation once
+  });
+
+  const { ref: ref1, inView: inView1 } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: ref3, inView: inView3 } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: ref4, inView: inView4 } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: ref5, inView: inView5 } = useInView({
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
   return (
     <>
       <Headers />
@@ -76,7 +106,7 @@ export default function HomePage() {
             <h2
               className={`text-[24px] animate__animated ${
                 boxInView
-                  ? "animate__backInDown visible-after-animation"
+                  ? "animate__bounceInLeft visible-after-animation"
                   : "hidden-before-animation"
               } leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]`}
             >
@@ -214,14 +244,36 @@ export default function HomePage() {
           </div>
         </section>
         <section className="py-20">
-          <div className="bg-primary px-4 rounded-full w-fit py-2 text-sm lg:text-base text-white">
+          <div
+            ref={boxRef2}
+            className={`bg-primary animate__animated ${
+              boxInView2
+                ? "animate__backInUp visible-after-animation"
+                : "hidden-before-animation"
+            } px-4 rounded-full w-fit py-2 text-sm lg:text-base text-white`}
+          >
             Range of Services
           </div>
-          <div className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between py-5">
-            <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]">
+          <div
+            ref={boxRef2}
+            className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between py-5"
+          >
+            <h2
+              className={`text-[24px] animate__animated ${
+                boxInView2
+                  ? "animate__bounceInLeft visible-after-animation"
+                  : "hidden-before-animation"
+              } leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]`}
+            >
               Comprehensive Logistics Solutions
             </h2>
-            <p className="text-base text-black max-w-[557px]">
+            <p
+              className={`text-base animate__animated ${
+                boxInView2
+                  ? "animate__bounceInRight visible-after-animation"
+                  : "hidden-before-animation"
+              } leading-[19.68px] text-black max-w-[557px]`}
+            >
               We offer an extensive range of services designed to meet all your
               logistics needs. From transportation and warehousing to supply
               chain management, our expert team ensures precision and
