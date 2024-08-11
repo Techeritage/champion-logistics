@@ -16,7 +16,7 @@ export default function QuoteBtn({
       <div
         className={`${
           pathName === "/quote" ? "bg-black" : "bg-primary"
-        } relative flex items-center text-white text-base px-8 lg:px-5 h-[62px] lg:h-[48px] rounded-full ${className}`}
+        } relative flex items-center hover:opacity-85 hover:transition-all hover:duration-300 text-white text-base px-8 lg:px-5 h-[62px] lg:h-[48px] rounded-full ${className}`}
       >
         {title}
         <span

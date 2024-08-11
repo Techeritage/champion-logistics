@@ -57,7 +57,7 @@ export default function Footer() {
           </h2>
           <div>
             <a
-              className="text-sm lg:text-base text-white font-clashmd mb-3 flex items-center gap-1"
+              className="text-sm hover:opacity-75 hover:transition-opacity hover:duration-200 w-fit lg:text-base text-white font-clashmd mb-3 flex items-center gap-1"
               href="mailto:mails@championlogistics.org.ng"
             >
               mails@championlogistics.org.ng{" "}
@@ -65,13 +65,13 @@ export default function Footer() {
             </a>
             <div className="grid">
               <a
-                className="text-sm lg:text-base text-white font-clashmd"
+                className="text-sm hover:opacity-75 hover:transition-opacity hover:duration-200 w-fit lg:text-base text-white font-clashmd"
                 href="tel:+2348186536416"
               >
                 +234 (0)818 653 6416
               </a>
               <a
-                className="text-sm lg:text-base text-white font-clashmd"
+                className="text-sm hover:opacity-75 hover:transition-opacity hover:duration-200 w-fit lg:text-base text-white font-clashmd"
                 href="tel:+2348033204203"
               >
                 +234 (0)803 320 4203
@@ -89,7 +89,7 @@ export default function Footer() {
                 <Link
                   key={i}
                   href={link.link}
-                  className="text-sm font-clash lg:text-base text-white flex items-center gap-1"
+                  className="text-sm hover:opacity-75 hover:transition-opacity hover:duration-200 w-fit font-clash lg:text-base text-white flex items-center gap-1"
                 >
                   {link.name}{" "}
                   <Image src="/arrow3.svg" width={20} height={20} alt="arrow" />
@@ -106,7 +106,7 @@ export default function Footer() {
                 <Link
                   key={i}
                   href={link.link}
-                  className="text-sm font-clash lg:text-base text-white flex items-center gap-1"
+                  className="text-sm font-clash hover:opacity-75 hover:transition-opacity hover:duration-200 w-fit lg:text-base text-white flex items-center gap-1"
                 >
                   {link.name}{" "}
                   <Image src="/arrow3.svg" width={20} height={20} alt="arrow" />
