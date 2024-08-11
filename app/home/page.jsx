@@ -27,11 +27,31 @@ export default function HomePage() {
   });
 
   const { ref: ref11, inView: inView11 } = useInView({
-    threshold: 0.2,
+    threshold: 0.3,
+    triggerOnce: true,
+  });
+
+  const { ref: ref12, inView: inView12 } = useInView({
+    threshold: 0.3,
     triggerOnce: true,
   });
 
   const { ref: ref2, inView: inView2 } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const { ref: refa, inView: inViewa } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const { ref: refb, inView: inViewb } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  const { ref: refc, inView: inViewc } = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
@@ -424,6 +444,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
+
         <section className="py-20">
           <div
             ref={boxRef2}
@@ -461,8 +482,18 @@ export default function HomePage() {
               reliability in every step.
             </p>
           </div>
-          <div className="flex lg:flex-row flex-col lg:max-h-[450px] gap-5 pt-10">
-            <div className="basis-[45%] relative">
+          {/**Desktop */}
+          <div
+            ref={ref12}
+            className="hidden lg:flex lg:flex-row flex-col lg:max-h-[450px] gap-5 pt-10"
+          >
+            <div
+              className={`animate__animated ${
+                inView12
+                  ? "animate__fadeInLeft visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[45%] relative`}
+            >
               <Image
                 loading="lazy"
                 src="/cd1.png"
@@ -480,7 +511,13 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="basis-[27.5%] relative">
+            <div
+              className={`animate__animated ${
+                inView12
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[27.5%] relative`}
+            >
               <Image
                 loading="lazy"
                 src="/cd2.png"
@@ -498,7 +535,92 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-            <div className="basis-[27.5%] relative">
+            <div
+              className={`animate__animated ${
+                inView12
+                  ? "animate__fadeInRight visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[27.5%] relative`}
+            >
+              <Image
+                loading="lazy"
+                src="/cd3.png"
+                width={1000}
+                height={700}
+                alt="arrow icon"
+                className="h-[301px] lg:h-[450px] object-cover rounded-[20px]"
+              />
+              <div className="flex absolute bottom-7 left-5">
+                <div className="h-[50px] w-fit flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base bg-primaryLight">
+                  Courier
+                </div>
+                <div className="h-[50px] w-fit ml-[-10px] flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base bg-secondary">
+                  Warehousing
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/**Mobile */}
+          <div className="flex lg:hidden lg:flex-row flex-col lg:max-h-[450px] gap-5 pt-10">
+            <div
+              ref={refa}
+              className={`animate__animated ${
+                inViewa
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[45%] relative`}
+            >
+              <Image
+                loading="lazy"
+                src="/cd1.png"
+                width={1000}
+                height={700}
+                alt="arrow icon"
+                className="h-[301px] lg:h-[450px] w-full object-cover rounded-[20px]"
+              />
+              <div className="flex absolute bottom-7 left-5">
+                <div className="h-[50px] w-fit flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base bg-primaryLight">
+                  International Freight
+                </div>
+                <div className="h-[50px] w-fit ml-[-10px] flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base bg-secondary">
+                  Import & Export
+                </div>
+              </div>
+            </div>
+            <div
+              ref={refb}
+              className={`animate__animated ${
+                inViewb
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[27.5%] relative`}
+            >
+              <Image
+                loading="lazy"
+                src="/cd2.png"
+                width={1000}
+                height={700}
+                alt="arrow icon"
+                className="h-[301px] lg:h-[450px] object-cover rounded-[20px]"
+              />
+              <div className="flex absolute bottom-7 left-5">
+                <div className="h-[50px] w-fit flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base bg-secondary">
+                  Packaging
+                </div>
+                <div className="h-[50px] w-fit ml-[-10px] flex items-center justify-center rounded-full px-4 text-black text-xs lg:text-base  bg-primaryLight">
+                  Palletization
+                </div>
+              </div>
+            </div>
+            <div
+              ref={refc}
+              className={`animate__animated ${
+                inViewc
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } basis-[27.5%] relative`}
+            >
               <Image
                 loading="lazy"
                 src="/cd3.png"
