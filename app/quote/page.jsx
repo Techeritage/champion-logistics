@@ -311,7 +311,7 @@ export default function QuotePage() {
             </section>
           )}
         </div>
-
+        {/**third stage**/}
         <div ref={targetRef2}>
           {secondStage && (
             <section className="bg-[#BEE1FF] py-20 px-[3%]">
@@ -319,13 +319,18 @@ export default function QuotePage() {
                 <h2 className="text-xl font-clashmd text-center mb-10">
                   Start booking your <br /> shipment.
                 </h2>
+                {error3 && (
+                  <p className="text-center text-red-500 text-xs lg:text-sm py-3">
+                    {error3}
+                  </p>
+                )}
                 <div className="mx-auto lg:max-w-[650px] grid lg:grid-cols-2 gap-6">
                   <input
                     type="text"
                     value={shipmentDate}
                     onChange={(e) => setShipmentDate(e.target.value)}
                     placeholder="Shipment date*"
-                    className="inputBox bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                    className="inputBox focus:bg-transparent bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
                   />
 
                   <input
@@ -334,11 +339,11 @@ export default function QuotePage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     name="width"
-                    className="inputBox bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
+                    className="inputBox focus:bg-transparent bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
                   />
                 </div>
                 <button
-                  onClick={handleSecondStage}
+                  onClick={handleThirdStage}
                   className="bg-primary text-white min-w-full mx-auto mt-10 lg:min-w-[558px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
                 >
                   Get a Quote
