@@ -50,12 +50,9 @@ export default function HomePage() {
     <>
       <Headers />
       <main className="px-[3%]">
-        <section>
+        <section ref={textRef}>
           <div>
-            <div
-              ref={textRef}
-              className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9"
-            >
+            <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">
               <h1
                 className={`text-5xl animate__animated ${
                   textInView
@@ -84,7 +81,11 @@ export default function HomePage() {
               width={2000}
               height={465}
               alt="arrow icon"
-              className="w-full h-[301px] object-cover rounded-[15px] lg:rounded-[20px] lg:h-[465px]"
+              className={`w-full animate__animated ${
+                textInView
+                  ? "animate__backInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } h-[301px] object-cover rounded-[15px] lg:rounded-[20px] lg:h-[465px]`}
             />
           </div>
         </section>
