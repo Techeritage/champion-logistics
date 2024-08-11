@@ -8,17 +8,17 @@ import { useInView } from "react-intersection-observer";
 export default function HomePage() {
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.3, // Adjust threshold as needed
-    triggerOnce: true, // Only trigger the animation once
+    //triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef, inView: boxInView } = useInView({
     threshold: 0.5, // Adjust threshold as needed
-    triggerOnce: true, // Only trigger the animation once
+    //triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: boxRef2, inView: boxInView2 } = useInView({
     threshold: 0.5, // Adjust threshold as needed
-    triggerOnce: true, // Only trigger the animation once
+    //triggerOnce: true, // Only trigger the animation once
   });
 
   const { ref: ref1, inView: inView1 } = useInView({
@@ -83,7 +83,7 @@ export default function HomePage() {
               alt="arrow icon"
               className={`w-full animate__animated ${
                 textInView
-                  ? "animate__backInUp visible-after-animation"
+                  ? "animate__fadeInUp visible-after-animation"
                   : "hidden-before-animation"
               } h-[301px] object-cover rounded-[15px] lg:rounded-[20px] lg:h-[465px]`}
             />
