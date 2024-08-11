@@ -99,7 +99,7 @@ export default function QuotePage() {
   return (
     <>
       <Headers />
-      <main className="">
+      <main className="pt-[97px] lg:pt-[104px]">
         <section className="px-[3%]">
           <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">
             <h1 className="text-5xl lg:text-[69px] font-clashmd lg:basis-[60%] leading-[59.04px] lg:leading-[80px]">

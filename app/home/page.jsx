@@ -82,7 +82,7 @@ export default function HomePage() {
   return (
     <>
       <Headers />
-      <main className="px-[3%] overflow-hidden">
+      <main className="px-[3%] overflow-hidden pt-[97px] lg:pt-[104px]">
         <section ref={textRef}>
           <div>
             <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">

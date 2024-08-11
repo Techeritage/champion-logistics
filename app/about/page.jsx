@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       <Headers />
-      <main className="">
+      <main className="pt-[97px] lg:pt-[104px]">
         <section className="px-[3%]">
           <h1 className="headingBig py-10">Global cargo service providers</h1>
           <Image

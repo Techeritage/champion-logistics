@@ -11,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="font-clash pt-[97px] lg:pt-[104px]">
+      <body className="font-clash">
         {children}
         <Footer />
       </body>

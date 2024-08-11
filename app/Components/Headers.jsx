@@ -29,7 +29,7 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
   const [isNav, setIsNav] = useState(false);
   const pathName = usePathname();
   return (
-    <div className="fixed bg-white top-0 right-0 left-0 z-50">
+    <div className={`${textColor === 'text-black' ? 'bg-white': 'bg-black/25'} fixed top-0 right-0 left-0 z-50`}>
       <div className="px-[3%] py-7 flex items-center justify-between relative">
         {logo1 === "yes" ? (
           <Link href="/home">

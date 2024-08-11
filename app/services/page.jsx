@@ -46,7 +46,7 @@ export default function ServicePage() {
     <>
       <Headers />
       <main>
-        <section className="px-[3%] py-10">
+        <section className="px-[3%] py-10 pt-[97px] lg:pt-[104px]">
           <h1 className="headingBig">Extensive Range of Services</h1>
         </section>
         <section className="grid gap-5 pt-16 mb-5">

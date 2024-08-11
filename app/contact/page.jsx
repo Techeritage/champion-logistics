@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <>
       <Headers />
-      <main className="px-[3%] pb-20">
+      <main className="px-[3%] pb-20 pt-[97px] lg:pt-[104px]">
         <h2 className="headingBig py-10">
           Logistics Made <br /> <span className="text-primary"> Efficient</span>.
         </h2>
