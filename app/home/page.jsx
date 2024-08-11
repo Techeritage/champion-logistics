@@ -23,27 +23,32 @@ export default function HomePage() {
 
   const { ref: ref1, inView: inView1 } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
+    //triggerOnce: true,
+  });
+
+  const { ref: ref11, inView: inView11 } = useInView({
+    threshold: 0.3,
+    //triggerOnce: true,
   });
 
   const { ref: ref2, inView: inView2 } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
+    //triggerOnce: true,
   });
 
   const { ref: ref3, inView: inView3 } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
+    //triggerOnce: true,
   });
 
   const { ref: ref4, inView: inView4 } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
+    // triggerOnce: true,
   });
 
   const { ref: ref5, inView: inView5 } = useInView({
     threshold: 0.3,
-    triggerOnce: true,
+    //triggerOnce: true,
   });
 
   return (
@@ -127,11 +132,15 @@ export default function HomePage() {
               experience champions logistics
             </p>
           </div>
-          <div className="flex mt-10 lg:mt-0 lg:flex-row flex-col min-w-full gap-5 min-h-[402px]">
+
+          {/**Desktop */}
+          <div
+            ref={ref11}
+            className="hidden lg:flex mt-10 lg:mt-0 lg:flex-row flex-col min-w-full gap-5 min-h-[402px]"
+          >
             <div
-              ref={ref1}
               className={`animate__animated ${
-                inView1
+                inView11
                   ? "animate__fadeInLeft visible-after-animation"
                   : "hidden-before-animation"
               } relative`}
@@ -158,9 +167,8 @@ export default function HomePage() {
               </p>
             </div>
             <div
-              ref={ref1}
               className={`animate__animated ${
-                inView1
+                inView11
                   ? "animate__fadeInUp visible-after-animation"
                   : "hidden-before-animation"
               } grid gap-5`}
@@ -212,9 +220,8 @@ export default function HomePage() {
               </div>
             </div>
             <div
-              ref={ref1}
               className={`animate__animated ${
-                inView1
+                inView11
                   ? "animate__fadeInRight visible-after-animation"
                   : "hidden-before-animation"
               } grid gap-5`}
@@ -242,6 +249,158 @@ export default function HomePage() {
                 </p>
               </div>
               <div className="relative">
+                <Image
+                  loading="lazy"
+                  src="/ab5.png"
+                  width={361}
+                  height={157}
+                  alt="arrow icon"
+                  className="rounded-[20px] min-w-full h-[155px] lg:h-[157px]"
+                />
+                <Image
+                  loading="lazy"
+                  src="/abc5.svg"
+                  width={40}
+                  height={40}
+                  alt="arrow icon"
+                  className="absolute top-4 left-4"
+                />
+                <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-7 leading-[19.68px] left-4">
+                  Our costing is tailored in <br /> tandem with your budget.
+                </p>
+              </div>
+            </div>
+          </div>
+          {/**Mobile */}
+          <div className="flex lg:hidden mt-10 lg:mt-0 lg:flex-row flex-col min-w-full gap-5 min-h-[402px]">
+            <div
+              ref={ref1}
+              className={`animate__animated ${
+                inView1
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } relative`}
+            >
+              <Image
+                loading="lazy"
+                src="/ab1.png"
+                width={475}
+                height={402}
+                alt="arrow icon"
+                className="rounded-[20px] min-w-full h-[301px] lg:h-[402px]"
+              />
+              <Image
+                loading="lazy"
+                src="/abc1.svg"
+                width={58}
+                height={58}
+                alt="arrow icon"
+                className="absolute top-4 left-4 w-[40px] h-[40px] lg:w-[58px] lg:h-[58px]"
+              />
+              <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-7 leading-[19.68px] left-4">
+                Our reputation precedes us. Gaining and <br /> maintaining your
+                trust is our priority.
+              </p>
+            </div>
+            <div className={`grid gap-5`}>
+              <div
+                ref={ref2}
+                className={`animate__animated ${
+                  inView2
+                    ? "animate__fadeInUp visible-after-animation"
+                    : "hidden-before-animation"
+                } relative`}
+              >
+                <Image
+                  loading="lazy"
+                  src="/ab2.png"
+                  width={475}
+                  height={169}
+                  alt="arrow icon"
+                  className="rounded-[20px] min-w-full lg:h-[169px] h-[196px]"
+                />
+                <Image
+                  loading="lazy"
+                  src="/abc2.svg"
+                  width={40}
+                  height={40}
+                  alt="arrow icon"
+                  className="absolute top-4 left-4"
+                />
+                <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-5 leading-[19.68px] left-4">
+                  Securing your goods from end-to-end is our <br /> topmost
+                  priority. You can rest assured of your <br /> good in our
+                  hands.
+                </p>
+              </div>
+              <div
+                ref={ref3}
+                className={`animate__animated ${
+                  inView3
+                    ? "animate__fadeInUp visible-after-animation"
+                    : "hidden-before-animation"
+                } relative`}
+              >
+                <Image
+                  loading="lazy"
+                  src="/ab3.png"
+                  width={475}
+                  height={209}
+                  alt="arrow icon"
+                  className="rounded-[20px] min-w-full h-[216px] lg:h-[209px]"
+                />
+                <Image
+                  loading="lazy"
+                  src="/abc3.svg"
+                  width={40}
+                  height={40}
+                  alt="arrow icon"
+                  className="absolute top-4 left-4"
+                />
+                <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-7 leading-[19.68px] left-4">
+                  Your goods are delivered as and when <br /> due. Prompt
+                  delivery is our watch word.
+                </p>
+              </div>
+            </div>
+            <div className={`grid gap-5`}>
+              <div
+                ref={ref4}
+                className={`animate__animated ${
+                  inView4
+                    ? "animate__fadeInUp visible-after-animation"
+                    : "hidden-before-animation"
+                } relative`}
+              >
+                <Image
+                  loading="lazy"
+                  src="/ab4.png"
+                  width={361}
+                  height={221}
+                  alt="arrow icon"
+                  className="rounded-[20px] min-w-full h-[227px] lg:h-[221px]"
+                />
+                <Image
+                  loading="lazy"
+                  src="/abc4.svg"
+                  width={40}
+                  height={40}
+                  alt="arrow icon"
+                  className="absolute top-4 left-4"
+                />
+                <p className="text-sm lg:text-base font-clashmd text-white absolute bottom-5 leading-[19.68px] left-4">
+                  To stay ahead of the game and serve you better, always, we
+                  employ latest technology and innovations in the industry.
+                </p>
+              </div>
+              <div
+                ref={ref5}
+                className={`animate__animated ${
+                  inView5
+                    ? "animate__fadeInUp visible-after-animation"
+                    : "hidden-before-animation"
+                } relative`}
+              >
                 <Image
                   loading="lazy"
                   src="/ab5.png"
