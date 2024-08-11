@@ -49,7 +49,7 @@ export default function HomePage() {
   return (
     <>
       <Headers />
-      <main className="px-[3%]">
+      <main className="px-[3%] overflow-hidden">
         <section ref={textRef}>
           <div>
             <div className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9">
@@ -128,7 +128,14 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex mt-10 lg:mt-0 lg:flex-row flex-col min-w-full gap-5 min-h-[402px]">
-            <div className="relative">
+            <div
+              ref={ref1}
+              className={`animate__animated ${
+                inView1
+                  ? "animate__fadeInLeft visible-after-animation"
+                  : "hidden-before-animation"
+              }relative`}
+            >
               <Image
                 loading="lazy"
                 src="/ab1.png"
@@ -150,7 +157,14 @@ export default function HomePage() {
                 trust is our priority.
               </p>
             </div>
-            <div className="grid gap-5">
+            <div
+              ref={ref1}
+              className={`animate__animated ${
+                inView1
+                  ? "animate__fadeInUp visible-after-animation"
+                  : "hidden-before-animation"
+              } grid gap-5`}
+            >
               <div className="relative">
                 <Image
                   loading="lazy"
@@ -197,7 +211,14 @@ export default function HomePage() {
                 </p>
               </div>
             </div>
-            <div className="grid gap-5">
+            <div
+              ref={ref1}
+              className={`animate__animated ${
+                inView1
+                  ? "animate__fadeInRight visible-after-animation"
+                  : "hidden-before-animation"
+              } grid gap-5`}
+            >
               <div className="relative">
                 <Image
                   loading="lazy"
