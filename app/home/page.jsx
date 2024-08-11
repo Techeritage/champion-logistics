@@ -55,6 +55,14 @@ export default function HomePage() {
     threshold: 0.2,
     triggerOnce: true,
   });
+  const { ref: refd, inView: inViewd } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+  const { ref: refe, inView: inViewe } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
 
   const { ref: ref3, inView: inView3 } = useInView({
     threshold: 0.2,
@@ -650,13 +658,25 @@ export default function HomePage() {
         <section className="py-20">
           <div className="flex flex-col lg:flex-row gap-9 lg:items-center justify-between">
             <div className="flex flex-col justify-center gap-5">
-              <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]">
-                Ship around the globe <br />
-                <span className="text-primary"> Efficiently.</span>
-              </h2>
-              <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]">
-                Find out the price right <br /> now --
-              </h2>
+              <div
+                ref={refd}
+                className={`animate__animated ${
+                  inViewd
+                    ? "lg:animate__bounceInRight animate__bounceInLeft visible-after-animation"
+                    : "hidden-before-animation"
+                }`}
+              >
+                <h2
+                  className={`text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]`}
+                >
+                  Ship around the globe <br />
+                  <span className="text-primary"> Efficiently.</span>
+                </h2>
+                <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]">
+                  Find out the price right <br /> now --
+                </h2>
+              </div>
+
               <div className="w-fit mt-5 hidden lg:block">
                 <QuoteBtn title="Request a Quote" href="/quote" />
               </div>
@@ -681,8 +701,14 @@ export default function HomePage() {
           </div>
         </section>
         <section className="py-20 flex lg:flex-row flex-col gap-10 lg:gap-40">
-          <div className="w-fit">
-            <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]">
+          <div ref={refe} className="w-fit">
+            <h2
+              className={`animate__animated ${
+                inViewe
+                  ? "lg:animate__bounceInRight animate__bounceInLeft visible-after-animation"
+                  : "hidden-before-animation"
+              } text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]`}
+            >
               Frequently asked <br />
               <span className="text-primary">Questions</span>
             </h2>
