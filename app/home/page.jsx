@@ -6,7 +6,12 @@ import Headers from "../Components/Headers";
 import { useInView } from "react-intersection-observer";
 
 export default function HomePage() {
-  const { ref, inView } = useInView({
+  const { ref: textRef, inView: textInView } = useInView({
+    threshold: 0.3, // Adjust threshold as needed
+    triggerOnce: true, // Only trigger the animation once
+  });
+
+  const { ref: boxRef, inView: boxInView } = useInView({
     threshold: 0.3, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
   });
@@ -18,12 +23,12 @@ export default function HomePage() {
         <section>
           <div>
             <div
-              ref={ref}
+              ref={textRef}
               className="flex pt-12 pb-9 flex-col gap-9 lg:flex-row items-center justify-between lg:py-9"
             >
               <h1
                 className={`text-5xl animate__animated ${
-                  inView
+                  textInView
                     ? "animate__backInDown visible-after-animation"
                     : "hidden-before-animation"
                 } lg:text-[69px] font-clashmd max-w-[921px] leading-[59.04px] lg:leading-[80px]`}
@@ -33,7 +38,7 @@ export default function HomePage() {
               </h1>
               <p
                 className={`lg:max-w-[365px] leading-[19.68px] animate__animated ${
-                  inView
+                  textInView
                     ? "animate__bounceInRight visible-after-animation"
                     : "hidden-before-animation"
                 }`}
@@ -55,9 +60,9 @@ export default function HomePage() {
         </section>
         <section className="py-20">
           <div
-            ref={ref}
+            ref={boxRef}
             className={`bg-primary animate__animated ${
-              inView
+              boxInView
                 ? "animate__backInUp visible-after-animation"
                 : "hidden-before-animation"
             } px-4 rounded-full w-fit py-2 text-sm lg:text-base text-white`}
@@ -65,12 +70,12 @@ export default function HomePage() {
             Customer centric approach
           </div>
           <div
-            ref={ref}
+            ref={boxRef}
             className="flex lg:flex-row flex-col gap-8 lg:items-center justify-between py-5"
           >
             <h2
               className={`text-[24px] animate__animated ${
-                inView
+                boxInView
                   ? "animate__backInDown visible-after-animation"
                   : "hidden-before-animation"
               } leading-[29.52px] lg:text-[39px] text-black font-clashmd max-w-[284px] lg:max-w-[540px] lg:leading-[50px]`}
@@ -80,7 +85,7 @@ export default function HomePage() {
             </h2>
             <p
               className={`text-base animate__animated ${
-                inView
+                boxInView
                   ? "animate__bounceInRight visible-after-animation"
                   : "hidden-before-animation"
               } leading-[19.68px] text-black max-w-[557px]`}
