@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const QuickLinks = [
   {
-    name: "FAQs",
-    link: "/faqs",
+    name: "Request a quote",
+    link: "/quote",
   },
   {
     name: "About Us",
@@ -81,7 +81,9 @@ export default function Footer() {
         </div>
         <div className="basis-1/2 flex flex-col lg:flex-row gap-7">
           <div className="basis-1/2">
-            <p className="text-sm font-clashmd lg:text-base text-primaryLight mb-3">QuickLinks</p>
+            <p className="text-sm font-clashmd lg:text-base text-primaryLight mb-3">
+              QuickLinks
+            </p>
             <div className="grid gap-2">
               {QuickLinks.map((link, i) => (
                 <Link
@@ -96,7 +98,9 @@ export default function Footer() {
             </div>
           </div>
           <div className="basis-1/2">
-            <p className="text-sm font-clashmd lg:text-base text-primaryLight mb-3">Legal</p>
+            <p className="text-sm font-clashmd lg:text-base text-primaryLight mb-3">
+              Legal
+            </p>
             <div className="grid gap-2">
               {Legal.map((link, i) => (
                 <Link

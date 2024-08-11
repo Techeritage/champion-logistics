@@ -105,20 +105,20 @@ export default function AboutPage() {
         </section>
         <section className="py-20 bg-primary px-[3%] grid gap-10 lg:gap-20">
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-20">
-            <h2 className="heading text-primaryLight">Our Mission.</h2>
+            <h2 className="heading text-primaryLight lg:min-w-[300px]">Our Mission.</h2>
             <p className="bodyText text-white lg:max-w-[668px]">
               Getting it right the first time and at all times.
             </p>
           </div>
           <div className="flex lg:items-center flex-col lg:flex-row gap-5 lg:gap-20">
-            <h2 className="heading text-white">Our Vision.</h2>
+            <h2 className="heading text-white lg:min-w-[300px]">Our Vision.</h2>
             <p className="bodyText text-white lg:max-w-[668px]">
               To be a world class logistics provider,using anvanced and modern
               technology with highly motivated staff.
             </p>
           </div>
           <div className="flex flex-col lg:flex-row gap-5 lg:gap-20">
-            <h2 className="heading text-primaryLight">Our Strength.</h2>
+            <h2 className="heading text-primaryLight lg:min-w-[300px]">Our Strength.</h2>
             <p className="bodyText text-white lg:max-w-[668px]">
               Our strength lies in our ability to offer this wide and extensive
               logistics package that is cost effective and convenient for all
