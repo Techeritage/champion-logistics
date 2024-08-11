@@ -314,7 +314,7 @@ export default function QuotePage() {
         {/**third stage**/}
         <div ref={targetRef2}>
           {secondStage && (
-            <section className="bg-[#BEE1FF] py-20 px-[3%]">
+            <section className="bg-[#BEE1FF] py-20 pt-28 px-[3%]">
               <div className="">
                 <h2 className="text-xl font-clashmd text-center mb-10">
                   Start booking your <br /> shipment.
