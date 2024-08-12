@@ -1,7 +1,9 @@
 "use client";
 import React, { useRef, useState } from "react";
+import emailjs from "emailjs-com";
 import Headers from "../Components/Headers";
 import CountryDropdown from "../Components/CountryDropdown";
+import toast from "react-hot-toast";
 
 const services = [
   "Enter Origin & Destination",
@@ -15,12 +17,16 @@ export default function QuotePage() {
 
   //first stage
   const [countryFrom, setCountryFrom] = useState(null);
+  const [countryFrom2, setCountryFrom2] = useState("");
   const [cityFrom, setCityFrom] = useState("");
+  const [to_name, setTo_name] = useState("Champions logistics");
   const [error, setError] = useState("");
   const [countryTo, setCountryTo] = useState(null);
+  const [countryTo2, setCountryTo2] = useState("");
   const [cityTo, setCityTo] = useState("");
   const [postalCodeTo, setPostalCodeTo] = useState("");
   const [firstStage, setfirstStage] = useState(false);
+  const [loading, setloading] = useState(false);
 
   //second stage
   const [weight, setWeight] = useState("");
@@ -38,10 +44,12 @@ export default function QuotePage() {
 
   const handleCountryChange = (selectedOption) => {
     setCountryFrom(selectedOption);
+    setCountryFrom2(selectedOption.value);
   };
 
   const handleCountryChange2 = (selectedOption) => {
     setCountryTo(selectedOption);
+    setCountryTo2(selectedOption.value);
   };
 
   // Create a ref for the target div
@@ -67,7 +75,15 @@ export default function QuotePage() {
       setError("All fields are required");
     } else {
       setError(""); // Clear any previous error
-      const data = { countryFrom, cityFrom, countryTo, cityTo, postalCodeTo };
+      const data = {
+        countryFrom,
+        countryFrom2,
+        cityFrom,
+        countryTo,
+        countryTo2,
+        cityTo,
+        postalCodeTo,
+      };
       console.log(data);
       scrollToDiv();
       setfirstStage(true); // Proceed to the next stage if needed
@@ -86,14 +102,55 @@ export default function QuotePage() {
     }
   };
 
-  const handleThirdStage = () => {
+  const sendEmail = (formData) => {
+    setloading(true); // Start loading
+
+    emailjs
+      .send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        formData,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+      )
+      .then((result) => {
+        console.log("Email sent:", result.text);
+        toast.success("Email sent successfully!");
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error);
+        toast.error("Failed to send email. Please try again."); // Error toast
+      })
+      .finally(() => {
+        setloading(false); // Stop loading
+      });
+  };
+
+  const handleSubmit = async () => {
     if (!shipmentDate || !email) {
       setError3("All fields are required");
     } else {
       setError3(""); // Clear any previous error
-      const data = { email, shipmentDate };
-      console.log(data);
+      // Collect data from all stages
+      const formData = {
+        to_name,
+        countryFrom2,
+        cityFrom,
+        countryTo2,
+        cityTo,
+        postalCodeTo,
+        weight,
+        quantity,
+        height,
+        length,
+        width,
+        shipmentDate,
+        email,
+      };
+
+      sendEmail(formData); // Assume sendEmail is an async function
+      // Handle success, e.g., show a success message
     }
+    // Optional: Reset the form or show a success message
   };
 
   return (
@@ -213,6 +270,7 @@ export default function QuotePage() {
             </div>
             <button
               onClick={handleFirstStage}
+              type="button"
               className="bg-primary text-white mx-auto mt-16 min-w-full lg:min-w-[602px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
             >
               Describe your shipment
@@ -302,6 +360,7 @@ export default function QuotePage() {
                   </div>
                 </div>
                 <button
+                  type="button"
                   onClick={handleSecondStage}
                   className="bg-primary text-white min-w-full mx-auto mt-16 lg:min-w-[600px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
                 >
@@ -334,7 +393,7 @@ export default function QuotePage() {
                   />
 
                   <input
-                    type="text"
+                    type="email"
                     placeholder="Email Address*"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -343,9 +402,32 @@ export default function QuotePage() {
                   />
                 </div>
                 <button
-                  onClick={handleThirdStage}
-                  className="bg-primary text-white min-w-full mx-auto mt-10 lg:min-w-[558px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
+                  onClick={handleSubmit}
+                  disabled={loading}
+                  className="bg-primary gap-6 disabled:opacity-70 text-white min-w-full mx-auto mt-10 lg:min-w-[558px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
                 >
+                  {loading && (
+                    <svg
+                      className="h-5 w-5 animate-spin"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                      />
+                    </svg>
+                  )}
                   Get a Quote
                 </button>
               </div>
