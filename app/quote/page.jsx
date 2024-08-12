@@ -135,7 +135,7 @@ export default function QuotePage() {
       )
       .then((result) => {
         console.log("Email sent:", result.text);
-        toast.success("Email sent successfully!");
+        toast.success("Quote submitted. We’ll be in touch!");
       })
       .catch((error) => {
         console.error("Error sending email:", error);
