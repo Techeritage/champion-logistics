@@ -409,7 +409,7 @@ export default function QuotePage() {
                     type="text"
                     value={shipmentDate}
                     onChange={handleDateChange}
-                    placeholder="Shipment date*"
+                    placeholder="Shipment date YYYY-MM-DD*"
                     maxLength={10} // Restricting to YYYY-MM-DD format
                     className="inputBox focus:bg-transparent bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
                   />
