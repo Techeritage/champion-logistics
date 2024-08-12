@@ -52,6 +52,27 @@ export default function QuotePage() {
     setCountryTo2(selectedOption.value);
   };
 
+  const handleDateChange = (e) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove all non-numeric characters
+
+    // Automatically insert the first hyphen after the fourth character (YYYY)
+    if (value.length >= 4) {
+      value =
+        value.slice(0, 4) + (value.length > 4 ? "-" : "") + value.slice(4);
+    }
+
+    // Automatically insert the second hyphen after the sixth character (YYYY-MM)
+    if (value.length >= 7) {
+      value =
+        value.slice(0, 7) + (value.length > 7 ? "-" : "") + value.slice(7);
+    }
+
+    // Limit the input to 10 characters (YYYY-MM-DD)
+    value = value.slice(0, 10);
+
+    setShipmentDate(value);
+  };
+
   // Create a ref for the target div
   const targetRef = useRef(null);
   const targetRef2 = useRef(null);
@@ -387,8 +408,9 @@ export default function QuotePage() {
                   <input
                     type="text"
                     value={shipmentDate}
-                    onChange={(e) => setShipmentDate(e.target.value)}
+                    onChange={handleDateChange}
                     placeholder="Shipment date*"
+                    maxLength={10} // Restricting to YYYY-MM-DD format
                     className="inputBox focus:bg-transparent bg-transparent placeholder:text-black placeholder:absolute placeholder:top-2 placeholder:left-2 placeholder:text-xs lg:placeholder:text-sm"
                   />
 
