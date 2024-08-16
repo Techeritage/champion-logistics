@@ -1,14 +1,17 @@
 import Image from "next/image";
 import React from "react";
 import Headers from "../Components/Headers";
+import { getContactPage } from "../libs/Powerhouse";
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const contact = await getContactPage();
   return (
     <>
       <Headers />
       <main className="px-[3%] pb-20 pt-[97px] lg:pt-[104px]">
         <h2 className="headingBig py-10">
-          Logistics Made <br /> <span className="text-primary"> Efficient</span>.
+          Logistics Made <br /> <span className="text-primary"> Efficient</span>
+          .
         </h2>
         <section className="grid gap-28 ">
           <div className="grid gap-5">
@@ -35,7 +38,9 @@ export default function ContactPage() {
           </div>
           <div className="grid gap-5">
             <div className="grid gap-1">
-              <h3 className="bodyText font-clashmd text-primary">Chat with us</h3>
+              <h3 className="bodyText font-clashmd text-primary">
+                Chat with us
+              </h3>
               <p className="text-sm lg:text-base">
                 Speak to our team via live chat
               </p>
@@ -90,6 +95,5 @@ export default function ContactPage() {
         </section>
       </main>
     </>
-
   );
 }
