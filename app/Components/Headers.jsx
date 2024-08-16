@@ -29,7 +29,11 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
   const [isNav, setIsNav] = useState(false);
   const pathName = usePathname();
   return (
-    <div className={`${textColor === 'text-black' ? 'bg-white': 'bg-black/25'} fixed top-0 right-0 left-0 z-50`}>
+    <div
+      className={`${
+        textColor === "text-black" ? "bg-white" : "bg-black/25"
+      } fixed top-0 right-0 left-0 z-50`}
+    >
       <div className="px-[3%] py-7 flex items-center justify-between relative">
         {logo1 === "yes" ? (
           <Link href="/">
@@ -93,7 +97,7 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
         <div className="lg:flex gap-5 items-center hidden">
           {navLinks.map((link, i) => (
             <Link
-              className={`text-base font-clashmd ${
+              className={`text-base font-clashmd hover:text-primary ${
                 pathName.startsWith(link.href) ? "text-primary" : textColor
               }`}
               key={i}
