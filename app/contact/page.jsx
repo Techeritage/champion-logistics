@@ -1,10 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import Headers from "../Components/Headers";
-import { getContactPage } from "../libs/Powerhouse";
 
 export default async function ContactPage() {
-  const contact = await getContactPage();
   return (
     <>
       <Headers />

@@ -134,7 +134,7 @@ export default function AboutPage() {
             </h2>
           </div>
           <div className="flex-grow">
-            <Faqs />
+          {/*  <Faqs />*/}
           </div>
         </section>
       </main>
