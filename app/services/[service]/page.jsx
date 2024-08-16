@@ -2,7 +2,13 @@ import Headers from '@/app/Components/Headers';
 import ServiceList from '@/app/Components/ServiceList';
 import servicesData from '@/app/Constant';
 import Image from 'next/image';
-import React from 'react'
+import React from 'react';
+
+export function generateStaticParams() {
+  return Object.keys(servicesData).map(serviceName => ({
+    service: serviceName,
+  }));
+}
 
 export default function OneServicePage({ params }) {
   const serviceName = params.service;
@@ -47,6 +53,5 @@ export default function OneServicePage({ params }) {
         </section>
       )}
     </main>
-
   )
 }

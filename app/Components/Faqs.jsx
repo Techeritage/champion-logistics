@@ -51,37 +51,14 @@ const AccordionItem = ({ question, answer }) => {
   );
 };
 
-const Accordion = () => {
-  const items = [
-    {
-      question: "What shipping services do you offer",
-      answer:
-        "You earn [specific amount or percentage] for every referred friend who makes a purchase.",
-    },
-    {
-      question: "What services does your logistics company offer?",
-      answer:
-        "We offer a comprehensive range of logistics services, including freight forwarding, warehousing, distribution, supply chain management, customs brokerage, and last-mile delivery services.",
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer:
-        "There is no limit to how many friends you can refer. The more, the merrier!",
-    },
-    {
-      question: " How do I schedule a pickup?",
-      answer:
-        "Yes, you can track the status of your referrals in your account dashboard.",
-    },
-  ];
-
+const Accordion = ({ faqs }) => {
   return (
     <div className="">
-      {items.map((item, index) => (
+      {faqs.map((item, index) => (
         <AccordionItem
           key={index}
-          question={item.question}
-          answer={item.answer}
+          question={item?.content}
+          answer={item?.subContent}
         />
       ))}
     </div>
