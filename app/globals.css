@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  overflow-x: hidden;
+  @apply font-clash;
 }
 .heading {
   @apply text-[24px] leading-[29.52px] lg:text-[39px] font-clashmd lg:leading-[50px];
@@ -18,7 +18,7 @@ body {
 }
 
 .inputBox {
-  @apply border px-5 border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full focus:outline-none
+  @apply border px-5 border-[#AAAAAAF4] rounded-[10px] text-xs lg:text-sm h-[60px] min-w-full focus:outline-none;
 }
 
 .hidden-before-animation {
@@ -43,7 +43,7 @@ body {
 }
 
 .shimmer-animation::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
