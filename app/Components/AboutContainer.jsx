@@ -7,7 +7,7 @@ export default function AboutContainer({ data, home }) {
   return (
     <main className="pt-[97px] lg:pt-[104px]">
       <section className="px-[3%]">
-        <h1 className="headingBig py-10">{data?.header}</h1>
+        <h1 className="headingBig max-w-[100%] py-10">{data?.header}</h1>
         <Image
           src={data?.key1?.bannerImage}
           width={2000}
@@ -37,7 +37,7 @@ export default function AboutContainer({ data, home }) {
       </section>
       <section className="pb-20 px-[3%] lg:py-20 flex flex-col gap-12 lg:flex-row justify-between">
         <div className="lg:basis-[40%] flex lg:flex-col flex-col-reverse gap-10">
-          <h2 className="heading">{data?.key2?.header}</h2>
+          <h2 className="heading max-w-[70%] lg:max-w-[80%]">{data?.key2?.header}</h2>
           <Image
             src={data?.key2?.bannerImage}
             width={700}

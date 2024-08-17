@@ -10,7 +10,7 @@ body {
 }
 
 .headingBig {
-  @apply text-5xl lg:text-[69px] font-clashmd max-w-[80%] lg:max-w-[921px] leading-[59.04px] lg:leading-[80px];
+  @apply text-5xl lg:text-[69px] font-clashmd max-w-[90%] lg:max-w-[921px] leading-[59.04px] lg:leading-[80px];
 }
 
 .bodyText {

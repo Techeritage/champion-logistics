@@ -7,7 +7,7 @@ const ServiceList = ({ title, services, bkColor = 'black', head2 = '', head2Text
         <h2 className={`heading lg:absolute lg:text-center lg:top-[-20px] right-[3%] lg:max-w-[250px] ${bkColor === 'black' ? 'text-black' : 'text-white'}`}>{head2Text}</h2>
       )}
       {!head2 && (
-        <h2 className={`heading lg:max-w-[30%] ${bkColor === 'black' ? 'text-black' : 'text-white'}`}>{title}</h2>
+        <h2 className={`heading max-w-[70%] lg:max-w-[30%] ${bkColor === 'black' ? 'text-black' : 'text-white'}`}>{title}</h2>
       )}
 
       <div className="grid lg:grid-cols-2 gap-7 lg:gap-5 lg:gap-y-10 lg:max-w-[80%]">
