@@ -17,12 +17,13 @@ export default function HomePage({ home }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const home = await getHomePage();
 
   return {
     props: {
       home,
     },
+    revalidate: 300, // Revalidate every 60 seconds (adjust as needed)
   };
 }
