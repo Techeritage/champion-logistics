@@ -11,7 +11,7 @@ export default function ContactPage({ contact }) {
   return (
     <>
       <Headers />
-      {contact && contact._id ? (
+      {contact ? (
         <ContactContainer data={contact} />
       ) : (
         <HomeSkeleton />
