@@ -22,12 +22,13 @@ export default function ContactPage({ contact }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const contact = await getContactPage();
 
   return {
     props: {
       contact,
     },
+    revalidate: 300, // Revalidate every 60 seconds (adjust as needed)
   };
 }

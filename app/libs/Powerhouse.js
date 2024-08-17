@@ -18,12 +18,13 @@ export const getHomePage = async () => {
 export const getContactPage = async () => {
   try {
     const res = await fetch(
-      "https://champions-logistics-cms.onrender.com/contactpage/",
-      {
-        cache: "no-store",
-      }
+      "https://champions-logistics-cms.onrender.com/contactpage/"
     );
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
     const data = await res.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.log(error);
