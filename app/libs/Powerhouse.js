@@ -73,3 +73,18 @@ export const getSingleService = async (id) => {
     console.log(error);
   }
 };
+
+export const getAllServices = async () => {
+  try {
+    const res = await fetch(
+      "https://champions-logistics-cms.onrender.com/servicepage/services",
+      {
+        cache: "no-store",
+      }
+    );
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
