@@ -9,7 +9,7 @@ import { HomeSkeleton } from "@/app/Components/loader";
 export default function OneServicePage({ serviceData }) {
   return (
     <>
-      {serviceData && serviceData?._id ? (
+      {serviceData ? (
         <SingleServiceContainer data={serviceData} />
       ) : (
         <HomeSkeleton />
@@ -21,6 +21,7 @@ export default function OneServicePage({ serviceData }) {
 
 export async function getStaticPaths() {
   const services = await getAllServices();
+  console.log(services);
 
   if (!services || !services.length) {
     return {

@@ -10,7 +10,7 @@ export const getHomePage = async () => {
     return data;
   } catch (error) {
     console.error("Failed to fetch home page data:", error);
-    return {}; // Return a fallback value or handle the error appropriately
+    return null;
   }
 };
 
@@ -26,6 +26,7 @@ export const getContactPage = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -41,6 +42,7 @@ export const getAboutPage = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -56,6 +58,7 @@ export const getServicePage = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -71,6 +74,7 @@ export const getSingleService = async (id) => {
     return data;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
 
@@ -86,5 +90,6 @@ export const getAllServices = async () => {
     return data;
   } catch (error) {
     console.log(error);
+    return null;
   }
 };
