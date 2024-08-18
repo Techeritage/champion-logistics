@@ -5,7 +5,7 @@ import "animate.css";
 import "@/public/ClashDisplay_Complete/ClashDisplay_Complete/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css";
 import Footer from "@/app/Components/Footer";
 import { getServicePage } from "@/app/libs/Powerhouse";
-import ServiceContainer from "@/app/Components/serviceContainer";
+import ServiceContainer from "@/app/Components/ServiceContainer";
 
 export default function ServicePage({ service }) {
   return (

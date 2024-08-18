@@ -32,6 +32,48 @@ export default function OneServicePage({ serviceData }) {
             </div>
           </div>
         </section>
+        {serviceData.services && (
+          <section className="px-[3%] py-20">
+            <ServiceList
+              title="Service Highlights"
+              services={serviceData.services}
+            />
+          </section>
+        )}
+
+        {serviceData.additionalServices && (
+          <section className="px-[3%] py-20 bg-primary">
+            <ServiceList
+              title="Additional Services"
+              bkColor="white"
+              services={serviceData.additionalServices}
+            />
+          </section>
+        )}
+
+        {serviceData.customerBenefits && (
+          <section className="px-[3%] py-20 bg-[#00B9E8]">
+            <ServiceList
+              title="Additional Services"
+              head2="yes"
+              head2Text="Customer Benefits"
+              bkColor="black"
+              services={serviceData.customerBenefits}
+            />
+          </section>
+        )}
+
+        {serviceData.serviceOptions && (
+          <section className="px-[3%] py-20 bg-[#00B9E8]">
+            <ServiceList
+              title="Additional Services"
+              head2="yes"
+              head2Text="Service Options"
+              bkColor="black"
+              services={serviceData.serviceOptions}
+            />
+          </section>
+        )}
       </main>
       <Footer />
     </>
