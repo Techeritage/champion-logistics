@@ -53,35 +53,36 @@ export default function SingleServiceContainer({ data }) {
           </div>
         </div>
       </section>
-      {keys?.map((key, index) => {
-        const lastIndex = data?.keys?.length - 1;
-        const length = data.keys.length;
-        let sectionStyle = "";
+      {keys.length > 0 &&
+        keys?.map((key, index) => {
+          const lastIndex = data?.keys?.length - 1;
+          const length = data.keys.length;
+          let sectionStyle = "";
 
-        if (data?.keys?.length === 3) {
-          sectionStyle =
-            index === 0
-              ? "bg-white"
-              : index === 1
-              ? "bg-primary"
-              : "bg-[#00B9E8]";
-        } else if (data?.keys?.length === 2) {
-          sectionStyle = index === 0 ? "bg-white" : "bg-[#00B9E8]";
-        } else {
-          sectionStyle = "bg-white"; // Default background color
-        }
-        return (
-          <section className={`px-[3%] py-20 ${sectionStyle}`} key={index}>
-            <ServiceList
-              title={key?.title}
-              bkColor={length === 3 && index === 1 ? "white" : "black"}
-              services={key?.contents}
-              head2={index === lastIndex ? "yes" : ""}
-              head2Text={index === lastIndex ? key?.title : ""}
-            />
-          </section>
-        );
-      })}
+          if (data?.keys?.length === 3) {
+            sectionStyle =
+              index === 0
+                ? "bg-white"
+                : index === 1
+                ? "bg-primary"
+                : "bg-[#00B9E8]";
+          } else if (data?.keys?.length === 2) {
+            sectionStyle = index === 0 ? "bg-white" : "bg-[#00B9E8]";
+          } else {
+            sectionStyle = "bg-white"; // Default background color
+          }
+          return (
+            <section className={`px-[3%] py-20 ${sectionStyle}`} key={index}>
+              <ServiceList
+                title={key?.title}
+                bkColor={length === 3 && index === 1 ? "white" : "black"}
+                services={key?.contents}
+                head2={index === lastIndex ? "yes" : ""}
+                head2Text={index === lastIndex ? key?.title : ""}
+              />
+            </section>
+          );
+        })}
     </main>
   );
 }
