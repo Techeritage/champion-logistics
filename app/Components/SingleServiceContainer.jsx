@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Headers from "@/app/Components/Headers";
@@ -6,17 +5,15 @@ import ServiceList from "./ServiceList";
 
 export default function SingleServiceContainer({ data }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const keys = data?.keys || []; // Default to an empty array
+
+  // Ensure keys is an array and filter out any null or undefined values
+  const keys = Array.isArray(data?.keys) ? data.keys.filter((key) => key) : [];
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      // Check if the scroll position is above or below the desired height (e.g., 200px)
-      if (scrollPosition > 500) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      // Check if the scroll position is above or below the desired height (e.g., 500px)
+      setIsScrolled(scrollPosition > 500);
     };
 
     // Attach the scroll event listener
@@ -27,6 +24,7 @@ export default function SingleServiceContainer({ data }) {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <main>
       <section className="relative">
@@ -42,7 +40,6 @@ export default function SingleServiceContainer({ data }) {
             textColor={isScrolled ? "text-black" : "text-white"}
             logo1={isScrolled ? "yes" : "no"}
           />
-
           <div className="px-[3%] grid gap-3 top-[200px] absolute lg:top-[40%]">
             <h1 className="text-[48px] leading-[59.04px] lg:text-[69px] text-white lg:leading-[84.87px] max-w-[678px] font-clashmd">
               {data?.header}
@@ -54,23 +51,24 @@ export default function SingleServiceContainer({ data }) {
         </div>
       </section>
       {keys.length > 0 &&
-        keys?.map((key, index) => {
-          const lastIndex = data?.keys?.length - 1;
-          const length = data.keys.length;
+        keys.map((key, index) => {
+          const lastIndex = keys.length - 1;
+          const length = keys.length;
           let sectionStyle = "";
 
-          if (data?.keys?.length === 3) {
+          if (length === 3) {
             sectionStyle =
               index === 0
                 ? "bg-white"
                 : index === 1
                 ? "bg-primary"
                 : "bg-[#00B9E8]";
-          } else if (data?.keys?.length === 2) {
+          } else if (length === 2) {
             sectionStyle = index === 0 ? "bg-white" : "bg-[#00B9E8]";
           } else {
             sectionStyle = "bg-white"; // Default background color
           }
+
           return (
             <section className={`px-[3%] py-20 ${sectionStyle}`} key={index}>
               <ServiceList

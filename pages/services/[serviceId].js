@@ -40,7 +40,6 @@ export async function getStaticPaths() {
   };
 }
 
-// Check if the serviceData is properly fetched
 export async function getStaticProps({ params }) {
   const serviceId = params?.serviceId;
 
@@ -52,8 +51,8 @@ export async function getStaticProps({ params }) {
     console.error("Error fetching service data:", error);
   }
 
-  // Ensure serviceData is not undefined
-  if (!serviceData) {
+  // Ensure serviceData is not undefined and keys is an array
+  if (!serviceData || !Array.isArray(serviceData.keys)) {
     return {
       notFound: true,
     };
