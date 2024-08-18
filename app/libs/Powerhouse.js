@@ -43,3 +43,33 @@ export const getAboutPage = async () => {
     console.log(error);
   }
 };
+
+export const getServicePage = async () => {
+  try {
+    const res = await fetch(
+      "https://champions-logistics-cms.onrender.com/servicepage/"
+    );
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const getSingleService = async (id) => {
+  try {
+    const res = await fetch(
+      `https://champions-logistics-cms.onrender.com/servicepage/services/${id}`
+    );
+    if (!res.ok) {
+      throw new Error("Network response was not ok");
+    }
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};

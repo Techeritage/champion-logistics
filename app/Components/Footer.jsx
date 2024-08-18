@@ -49,9 +49,12 @@ export default function Footer() {
       </div>
       <div className="w-full bg-primary px-[3%] gap-10 py-14 flex lg:flex-row flex-col lg:items-center">
         <div className="grid gap-8 basis-1/2">
-          <div className="h-[37px] lg:h-[39px] w-fit text-sm lg:text-base text-white border border-white rounded-full px-3 flex items-center justify-center">
+          <Link
+            href="/contact"
+            className="h-[37px] lg:h-[39px] hover:bg-white hover:text-primary transition-all duration-200 w-fit text-sm lg:text-base text-white border border-white rounded-full px-3 flex items-center justify-center"
+          >
             Contact Us
-          </div>
+          </Link>
           <h2 className="heading text-white">
             Ready to make your first <br /> transaction with us --
           </h2>
