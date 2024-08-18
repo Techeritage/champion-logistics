@@ -31,8 +31,8 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
   return (
     <div
       className={`${
-        textColor === "text-black" ? "bg-white" : "bg-black/25"
-      } fixed top-0 right-0 left-0 z-50`}
+        textColor === "text-black" ? "bg-white" : ""
+      } transition-all duration-300 fixed top-0 right-0 left-0 z-50`}
     >
       <div className="px-[3%] py-7 flex items-center justify-between relative">
         {logo1 === "yes" ? (

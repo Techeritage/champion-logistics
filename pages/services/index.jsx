@@ -11,7 +11,7 @@ export default function ServicePage({ service }) {
   return (
     <>
       <Headers />
-      {service && service._id ? (
+      {service && service?._id ? (
         <ServiceContainer data={service} />
       ) : (
         <HomeSkeleton />
