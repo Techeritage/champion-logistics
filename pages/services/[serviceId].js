@@ -34,8 +34,19 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const serviceId = params?.serviceId;
+  let serviceData = null;
 
-  const serviceData = await getSingleService(serviceId);
+  try {
+    serviceData = await getSingleService(serviceId);
+  } catch (error) {
+    console.error("Error fetching service data:", error);
+  }
+
+  if (!serviceData) {
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
