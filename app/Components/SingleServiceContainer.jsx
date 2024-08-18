@@ -6,6 +6,7 @@ import ServiceList from "./ServiceList";
 
 export default function SingleServiceContainer({ data }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const keys = data?.keys || []; // Default to an empty array
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,7 +53,7 @@ export default function SingleServiceContainer({ data }) {
           </div>
         </div>
       </section>
-      {data?.keys?.map((key, index) => {
+      {keys?.map((key, index) => {
         const lastIndex = data?.keys?.length - 1;
         const length = data.keys.length;
         let sectionStyle = "";

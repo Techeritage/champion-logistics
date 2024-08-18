@@ -22,18 +22,27 @@ export default function OneServicePage({ serviceData }) {
 export async function getStaticPaths() {
   const services = await getAllServices();
 
-  const paths = services?.map((service) => ({
+  if (!services || !services.length) {
+    return {
+      paths: [],
+      fallback: "blocking",
+    };
+  }
+
+  const paths = services.map((service) => ({
     params: { serviceId: service._id.toString() },
   }));
 
   return {
     paths,
-    fallback: false,
+    fallback: "blocking", // or 'true' based on your preference
   };
 }
 
+// Check if the serviceData is properly fetched
 export async function getStaticProps({ params }) {
   const serviceId = params?.serviceId;
+
   let serviceData = null;
 
   try {
@@ -42,6 +51,7 @@ export async function getStaticProps({ params }) {
     console.error("Error fetching service data:", error);
   }
 
+  // Ensure serviceData is not undefined
   if (!serviceData) {
     return {
       notFound: true,
