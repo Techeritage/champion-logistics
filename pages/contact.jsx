@@ -29,6 +29,6 @@ export async function getStaticProps() {
     props: {
       contact,
     },
-    revalidate: 300, // Revalidate every 60 seconds (adjust as needed)
+    revalidate: 60, // Revalidate every 60 seconds (adjust as needed)
   };
 }
