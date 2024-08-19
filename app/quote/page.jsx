@@ -136,6 +136,15 @@ export default function QuotePage() {
       .then((result) => {
         console.log("Email sent:", result.text);
         toast.success("Quote submitted. We’ll be in touch!");
+        setfirstStage(false);
+        setSecondStage(false);
+        //first stage
+        setCountryFrom(null);
+        setCityFrom("");
+        setError("");
+        setCountryTo(null);
+        setCityTo("");
+        setPostalCodeTo("");
       })
       .catch((error) => {
         console.error("Error sending email:", error);
@@ -291,8 +300,9 @@ export default function QuotePage() {
             </div>
             <button
               onClick={handleFirstStage}
+              disabled={firstStage}
               type="button"
-              className="bg-primary text-white mx-auto mt-16 min-w-full lg:min-w-[602px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
+              className="bg-primary disabled:opacity-50 text-white mx-auto mt-16 min-w-full lg:min-w-[602px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
             >
               Describe your shipment
             </button>
@@ -383,7 +393,8 @@ export default function QuotePage() {
                 <button
                   type="button"
                   onClick={handleSecondStage}
-                  className="bg-primary text-white min-w-full mx-auto mt-16 lg:min-w-[600px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
+                  disabled={secondStage}
+                  className="bg-primary disabled:opacity-50 text-white min-w-full mx-auto mt-16 lg:min-w-[600px] h-[60px] rounded-full text-base font-clashmd flex items-center justify-center"
                 >
                   Shipment details
                 </button>
