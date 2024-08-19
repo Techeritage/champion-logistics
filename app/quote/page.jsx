@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import Headers from "../Components/Headers";
 import CountryDropdown from "../Components/CountryDropdown";
@@ -15,6 +15,9 @@ const services = [
 export default function QuotePage() {
   const bkColor = "black";
 
+  // Create a ref for the target div
+  const targetRef = useRef(null);
+  const targetRef2 = useRef(null);
   //first stage
   const [countryFrom, setCountryFrom] = useState(null);
   const [countryFrom2, setCountryFrom2] = useState("");
@@ -73,40 +76,23 @@ export default function QuotePage() {
     setShipmentDate(value);
   };
 
-  // Create a ref for the target div
-  const targetRef = useRef(null);
-  const targetRef2 = useRef(null);
-
-  const scrollToDiv = () => {
-    // Scroll to the div using scrollIntoView
-    if (targetRef.current) {
-      targetRef.current.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (firstStage) {
+      targetRef.current?.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, [firstStage]);
 
-  const scrollToDiv2 = () => {
-    // Scroll to the div using scrollIntoView
-    if (targetRef2.current) {
-      targetRef2.current.scrollIntoView({ behavior: "smooth" });
+  useEffect(() => {
+    if (secondStage) {
+      targetRef2.current?.scrollIntoView({ behavior: "smooth" });
     }
-  };
+  }, [secondStage]);
 
   const handleFirstStage = () => {
     if (!countryFrom || !cityFrom || !countryTo || !cityTo || !postalCodeTo) {
       setError("All fields are required");
     } else {
       setError(""); // Clear any previous error
-      const data = {
-        countryFrom,
-        countryFrom2,
-        cityFrom,
-        countryTo,
-        countryTo2,
-        cityTo,
-        postalCodeTo,
-      };
-      console.log(data);
-      scrollToDiv();
       setfirstStage(true); // Proceed to the next stage if needed
     }
   };
@@ -116,9 +102,6 @@ export default function QuotePage() {
       setError2("All fields are required");
     } else {
       setError2(""); // Clear any previous error
-      const data = { weight, length, quantity, width, height };
-      console.log(data);
-      scrollToDiv2();
       setSecondStage(true); // Proceed to the next stage if needed
     }
   };
