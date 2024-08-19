@@ -16,7 +16,7 @@ export default function AboutContainer({ data, home }) {
           className="w-full object-cover rounded-[15px] hidden lg:block lg:rounded-[20px] lg:h-[567px]"
         />
         <Image
-          src="/aero2.png"
+          src={data?.key1?.bannerImage}
           width={500}
           loading="lazy"
           height={465}
