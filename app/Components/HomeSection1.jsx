@@ -3,8 +3,10 @@ import { useInView } from "react-intersection-observer";
 import QuoteBtn from "../Components/QuoteBtn";
 import Faqs from "../Components/Faqs";
 import Image from "next/image";
+import { useRef } from "react";
 
 export default function HomeSection1({ data }) {
+  const faqRef = useRef(null);
   const { ref: textRef, inView: textInView } = useInView({
     threshold: 0.3, // Adjust threshold as needed
     triggerOnce: true, // Only trigger the animation once
@@ -683,7 +685,10 @@ export default function HomeSection1({ data }) {
           </div>
         </div>
       </section>
-      <section className="py-20 flex lg:flex-row flex-col gap-10 lg:gap-40">
+      <section
+        id="faqs"
+        className="py-20 pt-28 flex lg:flex-row flex-col gap-10 lg:gap-40"
+      >
         <div ref={refe} className="w-fit">
           <h2
             className={`animate__animated ${

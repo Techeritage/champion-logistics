@@ -37,7 +37,9 @@ export default function AboutContainer({ data, home }) {
       </section>
       <section className="pb-20 px-[3%] lg:py-20 flex flex-col gap-12 lg:flex-row justify-between">
         <div className="lg:basis-[40%] flex lg:flex-col flex-col-reverse gap-10">
-          <h2 className="heading max-w-[70%] lg:max-w-[80%]">{data?.key2?.header}</h2>
+          <h2 className="heading max-w-[70%] lg:max-w-[80%]">
+            {data?.key2?.header}
+          </h2>
           <Image
             src={data?.key2?.bannerImage}
             width={700}
@@ -83,7 +85,10 @@ export default function AboutContainer({ data, home }) {
           </p>
         </div>
       </section>
-      <section className="py-20 px-[3%] flex lg:flex-row flex-col gap-10 lg:gap-40">
+      <section
+        id="faqs"
+        className="py-20 pt-28 px-[3%] flex lg:flex-row flex-col gap-10 lg:gap-40"
+      >
         <div className="w-fit">
           <h2 className="text-[24px] leading-[29.52px] lg:text-[39px] text-black font-clashmd lg:leading-[50px]">
             Frequently asked <br />

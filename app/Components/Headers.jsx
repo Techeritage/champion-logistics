@@ -21,13 +21,33 @@ const navLinks = [
   },
   {
     name: "FAQs",
-    href: "/faq",
+    href: "#faqs", // Scroll to the FAQ section
+    disabled: true, // Initially disable the FAQ link
   },
 ];
 
 const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
   const [isNav, setIsNav] = useState(false);
   const pathName = usePathname();
+
+  // Define the pages that contain the FAQ section
+  const faqPages = ["/", "/about"]; // Add any other pages where the FAQ section exists
+
+  // Check if the current page is one of the specific pages
+  const isFaqPage = faqPages.includes(pathName);
+
+  const handleFaqClick = (e) => {
+    if (!isFaqPage) {
+      e.preventDefault(); // Prevent navigation if not on the specific pages
+    } else {
+      // Scroll to the FAQs section
+      const faqSection = document.getElementById("faqs");
+      if (faqSection) {
+        faqSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div
       className={`${
@@ -78,6 +98,12 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
                 <Link
                   key={i}
                   href={link.href}
+                  onClick={(e) => {
+                    if (link.name === "FAQs") {
+                      handleFaqClick(e); // Pass the event object
+                    }
+                    setIsNav(false); // Close the navigation menu
+                  }}
                   className="text-2xl font-clash lg:text-base flex items-center gap-1"
                 >
                   {link.name}{" "}
@@ -97,6 +123,7 @@ const Headers = ({ textColor = "text-black", logo1 = "yes" }) => {
         <div className="lg:flex gap-5 items-center hidden">
           {navLinks.map((link, i) => (
             <Link
+              onClick={link.name === "FAQs" ? handleFaqClick : undefined}
               className={`text-base font-clashmd hover:text-primary ${
                 pathName.startsWith(link.href) ? "text-primary" : textColor
               }`}
