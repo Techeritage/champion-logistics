@@ -50,7 +50,6 @@ const AccordionItem = ({ question, answer }) => {
     </div>
   );
 };
-
 const Accordion = ({ faqs }) => {
   return (
     <div className="">
