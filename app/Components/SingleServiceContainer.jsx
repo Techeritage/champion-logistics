@@ -5,7 +5,6 @@ import ServiceList from "./ServiceList";
 
 export default function SingleServiceContainer({ data }) {
   const [isScrolled, setIsScrolled] = useState(false);
-
   // Ensure keys is an array and filter out any null or undefined values
   const keys = Array.isArray(data?.keys) ? data.keys.filter((key) => key) : [];
 
