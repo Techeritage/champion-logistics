@@ -62,6 +62,6 @@ export async function getStaticProps({ params }) {
     props: {
       serviceData,
     },
-    revalidate: 60, // Revalidate every 300 seconds
+    revalidate: 1800, // Revalidate every 300 seconds
   };
 }

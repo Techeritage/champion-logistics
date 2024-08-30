@@ -26,6 +26,6 @@ export async function getStaticProps() {
       about,
       home,
     },
-    revalidate: 60, // Revalidate every 60 seconds (adjust as needed)
+    revalidate: 1800, // Revalidate every 60 seconds (adjust as needed)
   };
 }
